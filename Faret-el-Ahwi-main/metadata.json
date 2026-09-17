@@ -1,0 +1,6 @@
+{
+  "name": "ZAKA FUN Challenge",
+  "description": "A mobile-first offline party game scaffold for ZAKA FUN Challenge.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

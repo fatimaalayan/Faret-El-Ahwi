@@ -1,0 +1,167 @@
+@import "tailwindcss";
+
+:root {
+  /* System font stack for Arabic and Latin (no remote loading) */
+  --font-arabic-system: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Tahoma, Arial, sans-serif;
+
+  /* Safe Area Variables with fallback */
+  --sat: env(safe-area-inset-top, 0px);
+  --sab: env(safe-area-inset-bottom, 0px);
+  --sal: env(safe-area-inset-left, 0px);
+  --sar: env(safe-area-inset-right, 0px);
+
+  /* Light Mode Palette */
+  --bg-primary: #fbf8f3;
+  --bg-surface: #ffffff;
+  --bg-surface-alt: #f4efe6;
+  --border-default: #e6ded3;
+  --border-strong: #d4c7b8;
+
+  --text-primary: #261610;
+  --text-secondary: #5c3b28;
+  --text-muted: #8c6a53;
+
+  /* Warm Coffee Browns */
+  --coffee-900: #261610;
+  --coffee-800: #3d2314;
+  --coffee-700: #59341f;
+  --coffee-600: #7a4627;
+  --coffee-500: #9e5d34;
+  --coffee-400: #c28357;
+  --coffee-200: #e2c2a9;
+  --coffee-100: #f4efe6;
+  --coffee-50: #fbf8f3;
+
+  /* Lebanese Red */
+  --leb-red: #d91621;
+  --leb-red-hover: #b8121a;
+  --leb-red-active: #940d14;
+  --leb-red-subtle: #fbebee;
+  --leb-red-text: #ffffff;
+
+  /* Lebanese Green (Cedar) */
+  --leb-green: #007a3d;
+  --leb-green-hover: #006633;
+  --leb-green-active: #005229;
+  --leb-green-subtle: #e6f4ed;
+  --leb-green-text: #ffffff;
+
+  /* Cream & Off-White */
+  --cream-base: #fbf8f3;
+  --cream-surface: #ffffff;
+  --cream-muted: #f4efe6;
+  --cream-border: #e6ded3;
+}
+
+.dark {
+  /* Dark Mode Palette */
+  --bg-primary: #140f0c;
+  --bg-surface: #211814;
+  --bg-surface-alt: #2d211b;
+  --border-default: #3d2c23;
+  --border-strong: #543e33;
+
+  --text-primary: #fbf8f3;
+  --text-secondary: #e2c2a9;
+  --text-muted: #a68b75;
+
+  /* Warm Coffee Browns (Dark) */
+  --coffee-900: #140f0c;
+  --coffee-800: #211814;
+  --coffee-700: #2d211b;
+  --coffee-600: #42322a;
+  --coffee-500: #5c4438;
+  --coffee-400: #8c6a53;
+  --coffee-200: #debfa7;
+  --coffee-100: #ede0d4;
+  --coffee-50: #fbf8f3;
+
+  /* Lebanese Red (Dark) */
+  --leb-red: #e62e38;
+  --leb-red-hover: #fa454f;
+  --leb-red-active: #cc1823;
+  --leb-red-subtle: #3a1518;
+  --leb-red-text: #ffffff;
+
+  /* Lebanese Green (Dark) */
+  --leb-green: #0fa95a;
+  --leb-green-hover: #1dc26a;
+  --leb-green-active: #0c8c49;
+  --leb-green-subtle: #123321;
+  --leb-green-text: #ffffff;
+
+  /* Cream & Off-White (Dark) */
+  --cream-base: #140f0c;
+  --cream-surface: #211814;
+  --cream-muted: #2d211b;
+  --cream-border: #3d2c23;
+}
+
+@theme {
+  --font-sans: var(--font-arabic-system);
+  --font-arabic: var(--font-arabic-system);
+
+  --color-coffee-50: var(--coffee-50);
+  --color-coffee-100: var(--coffee-100);
+  --color-coffee-200: var(--coffee-200);
+  --color-coffee-400: var(--coffee-400);
+  --color-coffee-500: var(--coffee-500);
+  --color-coffee-600: var(--coffee-600);
+  --color-coffee-700: var(--coffee-700);
+  --color-coffee-800: var(--coffee-800);
+  --color-coffee-900: var(--coffee-900);
+
+  --color-leb-red: var(--leb-red);
+  --color-leb-red-hover: var(--leb-red-hover);
+  --color-leb-red-active: var(--leb-red-active);
+  --color-leb-red-subtle: var(--leb-red-subtle);
+
+  --color-leb-green: var(--leb-green);
+  --color-leb-green-hover: var(--leb-green-hover);
+  --color-leb-green-active: var(--leb-green-active);
+  --color-leb-green-subtle: var(--leb-green-subtle);
+
+  --color-cream-base: var(--cream-base);
+  --color-cream-surface: var(--cream-surface);
+  --color-cream-muted: var(--cream-muted);
+  --color-cream-border: var(--cream-border);
+
+  --color-app-bg: var(--bg-primary);
+  --color-app-surface: var(--bg-surface);
+  --color-app-surface-alt: var(--bg-surface-alt);
+  --color-app-border: var(--border-default);
+  --color-app-border-strong: var(--border-strong);
+  --color-app-text: var(--text-primary);
+  --color-app-muted: var(--text-muted);
+  --color-app-secondary: var(--text-secondary);
+}
+
+body {
+  font-family: var(--font-arabic-system);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Safe area inset utility helpers */
+.pt-safe {
+  padding-top: var(--sat);
+}
+.pb-safe {
+  padding-bottom: var(--sab);
+}
+.pl-safe {
+  padding-left: var(--sal);
+}
+.pr-safe {
+  padding-right: var(--sar);
+}
+.p-safe {
+  padding-top: var(--sat);
+  padding-bottom: var(--sab);
+  padding-left: var(--sal);
+  padding-right: var(--sar);
+}
